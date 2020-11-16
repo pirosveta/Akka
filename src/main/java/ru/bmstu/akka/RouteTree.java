@@ -9,6 +9,8 @@ import static akka.http.javadsl.server.Directives.path;
 import static akka.http.javadsl.server.Directives.completeWithSource;
 import akka.stream.ActorMaterializer;
 
+import java.util.concurrent.CompletionStage;
+
 public class RouteTree extends AllDirectives {
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create("routes");
@@ -17,7 +19,7 @@ public class RouteTree extends AllDirectives {
 
         HttpServerMinimalExampleTest app = new HttpServerMinimalExampleTest();
 
-        final CompletionStagebinding =
+        final CompletionStage binding =
                 http.newServerAt("localhost", 8080)
                         .bind(app.createRoute());
 
