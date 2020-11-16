@@ -2,16 +2,13 @@ package ru.bmstu.akka;
 
 import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
-import static akka.http.javadsl.server.Directives.get;
-import static akka.http.javadsl.server.Directives.path;
-import static akka.http.javadsl.server.Directives.completeWithSource;
-import akka.stream.ActorMaterializer;
 
 import java.util.concurrent.CompletionStage;
 
-public class RouteTree extends AllDirectives {
+public class MainHttp extends AllDirectives {
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create("routes");
 
