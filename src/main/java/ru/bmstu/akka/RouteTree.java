@@ -31,6 +31,6 @@ public class RouteTree {
                                         {
                                             storeActor.tell(new StoreActor.StoreMessage(key, value), ActorRef.noSender());
                                             return complete("value saved to store ! key=" + key + " value=" + value);
-                                        })))),
+                                        }))));
     }
 }
