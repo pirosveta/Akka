@@ -3,14 +3,37 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfdcb8c0-380a-4a0f-be64-e43639338e9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="cfdcb8c0-380a-4a0f-be64-e43639338e9b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,17 +81,32 @@
       <updated>1605204681210</updated>
       <workItem from="1605204687566" duration="694000" />
       <workItem from="1605520615933" duration="594000" />
-      <workItem from="1605523955878" duration="926000" />
+      <workItem from="1605523955878" duration="1044000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="315" y="0" width="1280" height="964" key="#Project_Structure" timestamp="1605524275307">
       <screen x="0" y="0" width="1920" height="964" />
     </state>
     <state x="315" y="0" width="1280" height="964" key="#Project_Structure/0.0.1920.964@0.0.1920.964" timestamp="1605524275307" />
+    <state x="721" y="122" width="468" height="720" key="#com.intellij.ide.util.MemberChooser" timestamp="1605525069730">
+      <screen x="0" y="0" width="1920" height="964" />
+    </state>
+    <state x="721" y="122" width="468" height="720" key="#com.intellij.ide.util.MemberChooser/0.0.1920.964@0.0.1920.964" timestamp="1605525069730" />
   </component>
 </project>
