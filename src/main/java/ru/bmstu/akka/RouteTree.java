@@ -14,11 +14,11 @@ public class RouteTree {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
 
         Route route = path("packageID", () ->
-                route(get( () -> {
+                get(() -> {
                             Future<Object> result = Patterns.ask(testPackageActor,
                                     SemaphoreActor.makeRequest(), 5000);
                             return completeOKWithFuture(result, Jackson.marshaller());
-                        }))),
+                        })),
         path("test", () ->
                 route(
                         post(() ->
