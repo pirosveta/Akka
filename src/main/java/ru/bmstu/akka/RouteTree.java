@@ -3,6 +3,9 @@ package ru.bmstu.akka;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.server.Route;
+import static akka.http.javadsl.server.Directives.get;
+import static akka.http.javadsl.server.Directives.path;
+import static akka.http.javadsl.server.Directives.completeWithSource;
 import akka.stream.ActorMaterializer;
 
 public class RouteTree {
@@ -11,8 +14,7 @@ public class RouteTree {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
 
         Route route = path("packageID", () ->
-                route(
-                        get( () -> {
+                route(get( () -> {
                             Future<Object> result = Patterns.ask(testPackageActor,
                                     SemaphoreActor.makeRequest(), 5000);
                             return completeOKWithFuture(result, Jackson.marshaller());
