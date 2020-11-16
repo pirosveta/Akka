@@ -15,10 +15,8 @@ public class RouteTree {
 
         Route route = path("packageID", () ->
                 get(() -> {
-                            Future<Object> result = Patterns.ask(testPackageActor,
-                                    SemaphoreActor.makeRequest(), 5000);
-                            return completeOKWithFuture(result, Jackson.marshaller());
-                        })),
+                    
+                }),
         path("test", () ->
                 route(
                         post(() ->
