@@ -10,7 +10,7 @@ public class RouteTree {
         ActorSystem system = ActorSystem.create("routes");
         final ActorMaterializer materializer = ActorMaterializer.create(system);
 
-        Route route = path("semaphore", () ->
+        Route route = path("packageID", () ->
                 route(
                         get( () -> {
                             Future<Object> result = Patterns.ask(testPackageActor,
