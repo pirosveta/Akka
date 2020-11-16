@@ -1,2 +1,2 @@
-package PACKAGE_NAME;public class RouteTree {
+public class RouteTree {
 }
