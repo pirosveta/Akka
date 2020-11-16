@@ -22,9 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfdcb8c0-380a-4a0f-be64-e43639338e9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/RouteTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/RouteTree.java" afterDir="false" />
-    </list>
+    <list default="true" id="cfdcb8c0-380a-4a0f-be64-e43639338e9b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +81,7 @@
       <updated>1605204681210</updated>
       <workItem from="1605204687566" duration="694000" />
       <workItem from="1605520615933" duration="594000" />
-      <workItem from="1605523955878" duration="1302000" />
+      <workItem from="1605523955878" duration="1438000" />
     </task>
     <servers />
   </component>
@@ -110,5 +108,9 @@
       <screen x="0" y="0" width="1920" height="964" />
     </state>
     <state x="721" y="122" width="468" height="720" key="#com.intellij.ide.util.MemberChooser/0.0.1920.964@0.0.1920.964" timestamp="1605525069730" />
+    <state x="377" y="57" width="1155" height="850" key="Maven.ArtifactSearchDialog" timestamp="1605525360163">
+      <screen x="0" y="0" width="1920" height="964" />
+    </state>
+    <state x="377" y="57" width="1155" height="850" key="Maven.ArtifactSearchDialog/0.0.1920.964@0.0.1920.964" timestamp="1605525360163" />
   </component>
 </project>
