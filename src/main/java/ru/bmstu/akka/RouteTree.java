@@ -2,35 +2,30 @@ package ru.bmstu.akka;
 
 import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
 import static akka.http.javadsl.server.Directives.get;
 import static akka.http.javadsl.server.Directives.path;
 import static akka.http.javadsl.server.Directives.completeWithSource;
 import akka.stream.ActorMaterializer;
 
-public class RouteTree {
-    public static void main(String[] args) {
+public class RouteTree extends AllDirectives {
+    public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create("routes");
-        final ActorMaterializer materializer = ActorMaterializer.create(system);
 
-        Route route = path("packageID", () ->
-                get(() -> {
+        final Http http = Http.get(system);
 
-                }),
-        path("test", () ->
-                route(
-                        post(() ->
-                                entity(Jackson.unmarshaller(TestPackageMsg.class), msg -> {
-                                    testPackageActor.tell(msg, ActorRef.noSender());
-                                    return complete("Test started!");
-                                })))),
-                path("put", () ->
-                        get(() ->
-                                parameter("key", (key) ->
-                                        parameter("value", (value) ->
-                                        {
-                                            storeActor.tell(new StoreActor.StoreMessage(key, value), ActorRef.noSender());
-                                            return complete("value saved to store ! key=" + key + " value=" + value);
-                                        }))));
+        HttpServerMinimalExampleTest app = new HttpServerMinimalExampleTest();
+
+        final CompletionStagebinding =
+                http.newServerAt("localhost", 8080)
+                        .bind(app.createRoute());
+
+        System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
+        System.in.read(); // let it run until user presses return
+
+        binding
+                .thenCompose(ServerBinding::unbind) // trigger unbinding from the port
+                .thenAccept(unbound -> system.terminate()); // and shutdown when done
     }
 }
