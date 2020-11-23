@@ -16,6 +16,7 @@ import akka.pattern.Patterns;
 import akka.routing.SmallestMailboxPool;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import scala.concurrent.Future;
 
 import java.util.concurrent.CompletionStage;
 
@@ -51,7 +52,7 @@ public class MainHttp extends AllDirectives {
                 ),
                 get(() ->
                     parameter("packageID", (packageID) -> {
-                        Patterns.ask(router, packageID, 5000);
+                        Future<Object> result = Patterns.ask(router, packageID, 5000);
                         return complete("Results sent!");
                     })
                 ));
