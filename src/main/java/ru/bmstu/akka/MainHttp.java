@@ -48,6 +48,7 @@ public class MainHttp extends AllDirectives {
         return post(() ->
             entity(Jackson.unmarshaller(PackageDefinition.class), pack -> {
                 router.tell(pack, ActorRef.noSender());
+                return complete("Tests started!");
             })
         );
     }
