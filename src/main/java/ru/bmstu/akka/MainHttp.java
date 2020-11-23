@@ -40,7 +40,8 @@ public class MainHttp extends AllDirectives {
     private Route createRoute(ActorSystem system) {
         return route(
                 post(
-                        
+                        path(
+                        )
                 )
         );
     }
