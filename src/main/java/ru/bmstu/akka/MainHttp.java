@@ -37,8 +37,8 @@ public class MainHttp extends AllDirectives {
                 .thenAccept(unbound -> system.terminate());
     }
 
-    private Route createRoute(ActorSystem system) extends AllDirec{
-        return post(
+    private Route createRoute(ActorSystem system) {
+        return post(() ->
                 path("packageID", (packageID) ->
                         path("jsScript", (jsScript) ->
                                 path("functionName", (functionName) ->
