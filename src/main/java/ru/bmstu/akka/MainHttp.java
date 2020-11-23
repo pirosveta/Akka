@@ -3,6 +3,7 @@ package ru.bmstu.akka;
 import akka.NotUsed;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.actor.Props;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
@@ -23,7 +24,7 @@ public class MainHttp extends AllDirectives {
 
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create("routes");
-        ActorRef router = system.actorOf(new SmallestMailboxPool(5))
+        ActorRef router = system.actorOf(new SmallestMailboxPool(5).props(Props.create()))
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         MainHttp instance = new MainHttp(system);
