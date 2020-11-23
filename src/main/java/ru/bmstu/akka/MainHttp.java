@@ -12,6 +12,7 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
+import akka.pattern.Patterns;
 import akka.routing.SmallestMailboxPool;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
@@ -50,7 +51,7 @@ public class MainHttp extends AllDirectives {
                 ),
                 get(() ->
                     parameter("packageID", (packageID) -> {
-                        router.tell(packageID, ActorRef.noSender());
+                        Patterns.ask();
                         return complete("Results sent!");
                     })
                 ));
