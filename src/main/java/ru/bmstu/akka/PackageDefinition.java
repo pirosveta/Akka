@@ -1,7 +1,7 @@
 package ru.bmstu.akka;
 
 public class PackageDefinition {
-    private final String path;
+    private final String packageID;
     private final List<JsonNode> requests;
     private final List<JsonNode> responses;
 
