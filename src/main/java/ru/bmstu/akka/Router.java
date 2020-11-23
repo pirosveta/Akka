@@ -1,4 +1,10 @@
 package ru.bmstu.akka;
 
-public class Router {
+import akka.actor.AbstractActor;
+
+public class Router extends AbstractActor {
+    @Override
+    public Receive createReceive() {
+        return null;
+    }
 }
