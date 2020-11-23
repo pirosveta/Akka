@@ -22,9 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfdcb8c0-380a-4a0f-be64-e43639338e9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/MainHttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/MainHttp.java" afterDir="false" />
-    </list>
+    <list default="true" id="cfdcb8c0-380a-4a0f-be64-e43639338e9b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +83,7 @@
       <workItem from="1605520615933" duration="594000" />
       <workItem from="1605523955878" duration="6964000" />
       <workItem from="1605865921748" duration="1192000" />
-      <workItem from="1606137916285" duration="5700000" />
+      <workItem from="1606137916285" duration="6298000" />
     </task>
     <servers />
   </component>
