@@ -38,7 +38,7 @@ public class MainHttp extends AllDirectives {
     }
 
     private Route createRoute(ActorSystem system) {
-        return post(() ->
+        return route( post(() ->
                 path("packageID", (packageID) ->
                         path("jsScript", (jsScript) ->
                                 path("functionName", (functionName) ->
@@ -46,6 +46,6 @@ public class MainHttp extends AllDirectives {
                                 )
                         )
                 )
-        );
+        ));
     }
 }
