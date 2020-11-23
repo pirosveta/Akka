@@ -40,7 +40,9 @@ public class MainHttp extends AllDirectives {
 
     private Route createRoute(ActorSystem system) {
         return post(() ->
-            entity(Jackson.unmarshaller(PackageDefinition.class), pack ->)
+            entity(Jackson.unmarshaller(PackageDefinition.class), pack -> {
+                
+            })
         );
     }
 }
