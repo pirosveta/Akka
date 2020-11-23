@@ -19,7 +19,6 @@ import akka.stream.javadsl.Flow;
 import java.util.concurrent.CompletionStage;
 
 public class MainHttp extends AllDirectives {
-    private static ActorRef router;
 
     public MainHttp(ActorSystem system) {
     }
