@@ -55,7 +55,7 @@ public class MainHttp extends AllDirectives {
                 get(() ->
                     parameter("packageID", (packageID) -> {
                         router.tell(packageID, ActorRef.noSender());
-                        return complete("");
+                        return complete("Results sent!");
                     })
                 );
     }
