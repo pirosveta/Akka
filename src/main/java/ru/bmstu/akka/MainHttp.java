@@ -42,17 +42,17 @@ public class MainHttp extends AllDirectives {
     }
 
     private Route createRoute(ActorSystem system) {
-        ActorRef kernel = system.actorOf(new SmallestMailboxPool(5).props(Props.create(Kernel.class)), "router");
+        ActorRef kernel = system.actorOf(Props.create(Kernel.class));
         return route(
                 post(() ->
                     entity(Jackson.unmarshaller(PackageDefinition.class), pack -> {
-                        router.tell(pack, ActorRef.noSender());
+                        kernel.tell(pack, ActorRef.noSender());
                         return complete("Tests started!");
                     })
                 ),
                 get(() ->
                     parameter("packageID", (packageID) -> {
-                        Future<Object> result = Patterns.ask(router, packageID, 5000);
+                        Future<Object> result = Patterns.ask(kernel, packageID, 5000);
                         return completeOKWithFuture(result, Jackson.marshaller());
                     })
                 ));
