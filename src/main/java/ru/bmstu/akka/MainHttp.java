@@ -19,17 +19,12 @@ import akka.stream.javadsl.Flow;
 import java.util.concurrent.CompletionStage;
 
 public class MainHttp extends AllDirectives {
-    private static ActorSystem system;
-
-    public MainHttp(ActorSystem system) {
-        this.system = system;
-    }
 
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create("routes");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        MainHttp instance = new MainHttp(system);
+        MainHttp instance = new MainHttp();
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
                 instance.createRoute(system).flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
