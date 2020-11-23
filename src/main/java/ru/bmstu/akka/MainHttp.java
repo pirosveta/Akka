@@ -53,10 +53,10 @@ public class MainHttp extends AllDirectives {
                     })
                 ),
                 get(() ->
-                    entity(Jackson.unmarshaller(PackageDefinition.class), pack -> {
-                        router.tell(pack, ActorRef.noSender());
-                        return complete("Tests started!");
+                    parameter("packageID", (packageID) -> {
+                        router.tell(packageID, ActorRef.noSender());
+                        return complete("");
                     })
-                ));
+                );
     }
 }
