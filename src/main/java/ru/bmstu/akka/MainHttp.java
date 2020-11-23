@@ -53,7 +53,7 @@ public class MainHttp extends AllDirectives {
                 get(() ->
                     parameter("packageID", (packageID) -> {
                         Future<Object> result = Patterns.ask(router, packageID, 5000);
-                        return complete("Results sent!");
+                        return completeOKWithFuture("Results sent!");
                     })
                 ));
     }
