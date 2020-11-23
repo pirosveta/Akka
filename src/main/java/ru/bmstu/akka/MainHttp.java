@@ -45,11 +45,18 @@ public class MainHttp extends AllDirectives {
     }
 
     private Route createRoute(ActorSystem system) {
-        return post(() ->
-            entity(Jackson.unmarshaller(PackageDefinition.class), pack -> {
-                router.tell(pack, ActorRef.noSender());
-                return complete("Tests started!");
-            })
-        );
+        return route(
+                post(() ->
+                    entity(Jackson.unmarshaller(PackageDefinition.class), pack -> {
+                        router.tell(pack, ActorRef.noSender());
+                        return complete("Tests started!");
+                    })
+                ),
+                get(() ->
+                    entity(Jackson.unmarshaller(PackageDefinition.class), pack -> {
+                        router.tell(pack, ActorRef.noSender());
+                        return complete("Tests started!");
+                    })
+                ));
     }
 }
