@@ -25,7 +25,6 @@ public class MainHttp extends AllDirectives {
 
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create("routes");
-        router = system.actorOf(new SmallestMailboxPool(5).props(Props.create(Router.class)), "router");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         MainHttp instance = new MainHttp(system);
@@ -44,6 +43,7 @@ public class MainHttp extends AllDirectives {
     }
 
     private Route createRoute(ActorSystem system) {
+        ActorRef router = system.actorOf(new SmallestMailboxPool(5).props(Props.create(Router.class)), "router");
         return route(
                 post(() ->
                     entity(Jackson.unmarshaller(PackageDefinition.class), pack -> {
