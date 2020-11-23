@@ -22,7 +22,7 @@ public class MainHttp extends AllDirectives {
 
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create("routes");
-        ActorRef router =
+        ActorRef router = system.actorOf()
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         MainHttp instance = new MainHttp(system);
