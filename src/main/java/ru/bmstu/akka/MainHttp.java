@@ -39,7 +39,9 @@ public class MainHttp extends AllDirectives {
         );
         System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
         System.in.read();
-        binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
+        binding
+                .thenCompose(ServerBinding::unbind)
+                .thenAccept(unbound -> system.terminate());
     }
 
     private Route createRoute(ActorSystem system) {
