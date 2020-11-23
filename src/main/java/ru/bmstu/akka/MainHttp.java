@@ -42,7 +42,7 @@ public class MainHttp extends AllDirectives {
     }
 
     private Route createRoute(ActorSystem system) {
-        ActorRef router = system.actorOf(new SmallestMailboxPool(5).props(Props.create(Router.class)), "router");
+        ActorRef kernel = system.actorOf(new SmallestMailboxPool(5).props(Props.create(Kernel.class)), "router");
         return route(
                 post(() ->
                     entity(Jackson.unmarshaller(PackageDefinition.class), pack -> {
