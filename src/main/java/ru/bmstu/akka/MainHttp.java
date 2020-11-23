@@ -47,7 +47,7 @@ public class MainHttp extends AllDirectives {
     private Route createRoute(ActorSystem system) {
         return post(() ->
             entity(Jackson.unmarshaller(PackageDefinition.class), pack -> {
-                router.tell(input, );
+                router.tell(pack, ActorRef.noSender());
             })
         );
     }
