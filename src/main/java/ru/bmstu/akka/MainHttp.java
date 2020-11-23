@@ -38,6 +38,8 @@ public class MainHttp extends AllDirectives {
     }
 
     private Route createRoute(ActorSystem system) {
-        return route();
+        return route(
+                path()
+        );
     }
 }
