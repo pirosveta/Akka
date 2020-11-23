@@ -19,12 +19,14 @@ import akka.stream.javadsl.Flow;
 import java.util.concurrent.CompletionStage;
 
 public class MainHttp extends AllDirectives {
+    private static ActorRef router;
+
     public MainHttp(ActorSystem system) {
     }
 
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create("routes");
-        ActorRef router = system.actorOf(new SmallestMailboxPool(5).props(Props.create(Router.class)), "router");
+        router = system.actorOf(new SmallestMailboxPool(5).props(Props.create(Router.class)), "router");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         MainHttp instance = new MainHttp(system);
@@ -45,7 +47,7 @@ public class MainHttp extends AllDirectives {
     private Route createRoute(ActorSystem system) {
         return post(() ->
             entity(Jackson.unmarshaller(PackageDefinition.class), pack -> {
-                
+                router.tell();
             })
         );
     }
