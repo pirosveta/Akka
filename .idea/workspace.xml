@@ -24,7 +24,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cfdcb8c0-380a-4a0f-be64-e43639338e9b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/RouteTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/MainHttp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +83,9 @@
       <updated>1605204681210</updated>
       <workItem from="1605204687566" duration="694000" />
       <workItem from="1605520615933" duration="594000" />
-      <workItem from="1605523955878" duration="6928000" />
+      <workItem from="1605523955878" duration="6964000" />
+      <workItem from="1605865921748" duration="1192000" />
+      <workItem from="1606137916285" duration="617000" />
     </task>
     <servers />
   </component>
@@ -101,6 +102,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="315" y="0" width="1280" height="964" key="#Project_Structure" timestamp="1605524275307">
