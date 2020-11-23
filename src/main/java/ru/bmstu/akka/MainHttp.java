@@ -19,8 +19,10 @@ import akka.stream.javadsl.Flow;
 import java.util.concurrent.CompletionStage;
 
 public class MainHttp extends AllDirectives {
+    private static ActorSystem system;
 
     public MainHttp(ActorSystem system) {
+        this.system = system;
     }
 
     public static void main(String[] args) throws Exception {
