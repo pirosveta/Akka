@@ -22,10 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfdcb8c0-380a-4a0f-be64-e43639338e9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/MainHttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/MainHttp.java" afterDir="false" />
-    </list>
+    <list default="true" id="cfdcb8c0-380a-4a0f-be64-e43639338e9b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,7 +83,7 @@
       <workItem from="1605520615933" duration="594000" />
       <workItem from="1605523955878" duration="6964000" />
       <workItem from="1605865921748" duration="1192000" />
-      <workItem from="1606137916285" duration="7351000" />
+      <workItem from="1606137916285" duration="8022000" />
     </task>
     <servers />
   </component>
@@ -110,10 +107,10 @@
       <screen x="0" y="0" width="1920" height="964" />
     </state>
     <state x="315" y="0" width="1280" height="964" key="#Project_Structure/0.0.1920.964@0.0.1920.964" timestamp="1605524275307" />
-    <state x="721" y="122" width="468" height="720" key="#com.intellij.ide.util.MemberChooser" timestamp="1605525069730">
+    <state x="721" y="122" width="468" height="720" key="#com.intellij.ide.util.MemberChooser" timestamp="1606160538211">
       <screen x="0" y="0" width="1920" height="964" />
     </state>
-    <state x="721" y="122" width="468" height="720" key="#com.intellij.ide.util.MemberChooser/0.0.1920.964@0.0.1920.964" timestamp="1605525069730" />
+    <state x="721" y="122" width="468" height="720" key="#com.intellij.ide.util.MemberChooser/0.0.1920.964@0.0.1920.964" timestamp="1606160538211" />
     <state x="377" y="57" width="1155" height="850" key="Maven.ArtifactSearchDialog" timestamp="1605525360163">
       <screen x="0" y="0" width="1920" height="964" />
     </state>
