@@ -23,7 +23,7 @@ public class MainHttp extends AllDirectives {
 
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create("routes");
-        ActorRef router = system.actorOf(new SmallestMailboxPool(5), props.create())
+        ActorRef router = system.actorOf(new SmallestMailboxPool(5))
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         MainHttp instance = new MainHttp(system);
