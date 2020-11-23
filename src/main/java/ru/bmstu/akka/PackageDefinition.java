@@ -12,24 +12,28 @@ public class PackageDefinition {
     private final List<JsonNode> tests;
 
     public PackageDefinition(@JsonProperty("packageID") String packageID,
-                          @JsonProperty("jsScript") String jsScript,
-                          @JsonProperty("functionName") String functionName,
-                          @JsonProperty("tests") List<JsonNode> tests) {
+                             @JsonProperty("jsScript") String jsScript,
+                             @JsonProperty("functionName") String functionName,
+                             @JsonProperty("tests") List<JsonNode> tests) {
         this.packageID = packageID;
         this.jsScript = jsScript;
         this.functionName = functionName;
         this.tests = tests;
     }
 
-    public String getPath() {
-        return path;
+    public String getPackageID() {
+        return packageID;
     }
 
-    public List<JsonNode> getRequests() {
-        return requests;
+    public String getJsScript() {
+        return jsScript;
     }
 
-    public List<JsonNode> getResponses() {
-        return responses;
+    public String getFunctionName() {
+        return functionName;
+    }
+
+    public List<JsonNode> getTests() {
+        return tests;
     }
 }
