@@ -1,7 +1,12 @@
 package ru.bmstu.akka;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
+import java.util.List;
+
 public class PackageDefinition {
     private final String packageID, jsScript, functionName;
+    private final List<JsonNode> 
 
     public MockDefinition(@JsonProperty("path") String path,
                           @JsonProperty("requests") List<JsonNode> requests,
