@@ -40,7 +40,10 @@ public class MainHttp extends AllDirectives {
     private Route createRoute(ActorSystem system) {
         return post(
                 path("packageID", (packageID) ->
-                        path(
+                        path("jsScript", (jsScript) ->
+                                path(
+                                        
+                                )
 
                         )
 
