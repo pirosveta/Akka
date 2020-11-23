@@ -3,7 +3,7 @@ package ru.bmstu.akka;
 public class PackageDefinition {
     private final String packageID;
     private final List<JsonNode> jsScript;
-    private final List<JsonNode> responses;
+    private final List<JsonNode> functionName;
 
     public MockDefinition(@JsonProperty("path") String path,
                           @JsonProperty("requests") List<JsonNode> requests,
