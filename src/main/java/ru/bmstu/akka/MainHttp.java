@@ -20,7 +20,7 @@ import scala.concurrent.Future;
 import java.util.concurrent.CompletionStage;
 
 public class MainHttp extends AllDirectives {
-    
+
 
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create("routes");
