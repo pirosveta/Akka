@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class StoreActor extends AbstractActor {
 
-    private static Map<String, Map<String, List<String>>> total;
+    private static Map<String, Map<String, List<String>>> total = new HashMap<>();
 
     @Override
     public Receive createReceive() {
