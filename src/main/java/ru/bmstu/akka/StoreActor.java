@@ -18,15 +18,12 @@ public class StoreActor extends AbstractActor {
         return ReceiveBuilder.create().matchAny(input -> {
             Pair<PackageDefinition, TestsDefinition> pair = (Pair<PackageDefinition, TestsDefinition>) input;
             PackageDefinition pack = pair.first();
-            TestsDefinition tests = pair.second();
+            TestsDefinition test = pair.second();
             Map<String, List<String>> results = total.get(pack.getPackageID());
-            List<JsonNode> testsName = tests.getTestName();
-            List<JsonNode> testsValue = tests.getExpectedResult();
-            for (int i = 0; i < testsName.size(); i++) {
-                String name = testsName.get(i).toString();
-                String value =
-                total.put(pack.getPackageID(), tests.put(j.toString(), ))
-            }
+            List<String> values = results.get(test.getTestName());
+            values.add(test.getExpectedResult());
+            results.replace(test.getTestName(), values);
+            total.replace(pack.getPackageID(), results);
         })
         .build();
     }
