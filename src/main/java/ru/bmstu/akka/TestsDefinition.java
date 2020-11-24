@@ -7,7 +7,7 @@ import java.util.List;
 
 public class TestsDefinition {
     private final String testName;
-    private final String jsScript;
+    private final String expectedResult;
     private final String functionName;
     private final List<JsonNode> tests;
 
