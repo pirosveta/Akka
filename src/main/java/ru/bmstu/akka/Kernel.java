@@ -7,6 +7,7 @@ import akka.japi.pf.ReceiveBuilder;
 import akka.routing.SmallestMailboxPool;
 
 import java.util.Map;
+import java.util.concurrent.Future;
 
 public class Kernel extends AbstractActor {
 
@@ -25,7 +26,7 @@ public class Kernel extends AbstractActor {
                     storeRouter.tell(packageID, getSelf());
                 })
                 .match(Map.class, input -> {
-
+                    getSender().tell(input, ActorRef.noSender());
                 })
                 .build();
     }
