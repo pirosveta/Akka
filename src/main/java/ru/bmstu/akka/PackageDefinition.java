@@ -9,12 +9,12 @@ public class PackageDefinition {
     private final String packageID;
     private final String jsScript;
     private final String functionName;
-    private final List<TestsDefinition> tests;
+    private final List<JsonNode> tests;
 
     public PackageDefinition(@JsonProperty("packageID") String packageID,
                              @JsonProperty("jsScript") String jsScript,
                              @JsonProperty("functionName") String functionName,
-                             @JsonProperty("tests") List<TestsDefinition> tests) {
+                             @JsonProperty("tests") List<JsonNode> tests) {
         this.packageID = packageID;
         this.jsScript = jsScript;
         this.functionName = functionName;
@@ -33,7 +33,7 @@ public class PackageDefinition {
         return functionName;
     }
 
-    public List<TestsDefinition> getTests() {
+    public List<JsonNode> getTests() {
         return tests;
     }
 }
