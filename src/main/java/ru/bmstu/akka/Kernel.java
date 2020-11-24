@@ -17,9 +17,10 @@ public class Kernel extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(PackageDefinition.class, pair -> {
                     storeRouter.tell(pair, ActorRef.noSender());
+                    executeRouter.tell(pair, ActorRef.noSender());
                 })
                 .match(String.class, packageID -> {
-                    executeRouter.tell(packageID, ActorRef.noSender());
+                    
                 })
                 .build();
     }
