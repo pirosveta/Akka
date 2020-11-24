@@ -20,7 +20,7 @@ public class Kernel extends AbstractActor {
                     executeRouter.tell(pair, ActorRef.noSender());
                 })
                 .match(String.class, packageID -> {
-
+                    storeRouter.tell(packageID, getSelf());
                 })
                 .build();
     }
