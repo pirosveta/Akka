@@ -46,7 +46,7 @@ public class MainHttp extends AllDirectives {
         return route(
                 post(() ->
                     entity(Jackson.unmarshaller(PackageDefinition.class), pack ->
-                            pack.getTests(Jackson.unmarshaller(TestsDefinition.class), tests -> {
+                            path("tests", () -> (Jackson.unmarshaller(TestsDefinition.class), tests -> {
                                 Pair<PackageDefinition, TestsDefinition> pair = (Pair<PackageDefinition, TestsDefinition>) new Pair<>(pack, tests);
                                 kernel.tell(pair, ActorRef.noSender());
                                 return complete("Tests started");
