@@ -10,13 +10,23 @@ public class TestsDefinition {
     private final String expectedResult;
     private final List<JsonNode> params;
 
-    public PackageDefinition(@JsonProperty("packageID") String packageID,
-                             @JsonProperty("jsScript") String jsScript,
-                             @JsonProperty("functionName") String functionName,
-                             @JsonProperty("tests") List<JsonNode> tests) {
-        this.packageID = packageID;
-        this.jsScript = jsScript;
-        this.functionName = functionName;
-        this.tests = tests;
+    public TestsDefinition(@JsonProperty("testName") String testName,
+                             @JsonProperty("expectedResult") String expectedResult,
+                             @JsonProperty("params") List<JsonNode> params) {
+        this.testName = testName;
+        this.expectedResult = expectedResult;
+        this.params = params;
+    }
+
+    public String getTestName() {
+        return testName;
+    }
+
+    public String getExpectedResult() {
+        return expectedResult;
+    }
+
+    public List<JsonNode> getParams() {
+        return params;
     }
 }
