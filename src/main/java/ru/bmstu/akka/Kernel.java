@@ -22,6 +22,9 @@ public class Kernel extends AbstractActor {
                 .match(String.class, packageID -> {
                     storeRouter.tell(packageID, getSelf());
                 })
+                .match(Boolean[].class, input -> {
+
+                })
                 .build();
     }
 }
