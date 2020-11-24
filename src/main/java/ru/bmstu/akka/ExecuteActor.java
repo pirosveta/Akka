@@ -1,14 +1,13 @@
 package ru.bmstu.akka;
 
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
 import akka.japi.Pair;
 import akka.japi.pf.ReceiveBuilder;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
-import java.util.List;
-import java.util.Map;
 
 public class ExecuteActor extends AbstractActor {
     @Override
@@ -20,7 +19,9 @@ public class ExecuteActor extends AbstractActor {
             ScriptEngine engine = new ScriptEngineManager().getEngineByName("executeTests");
             engine.eval(pack.getJsScript());
             Invocable invocable = (Invocable) engine;
-            return invocable.invokeFunction(pack.getFunctionName(), ).toString();
+            String result = invocable.invokeFunction(pack.getFunctionName(), test.getParams().toArray()).toString();
+            String[] output = {pack.getPackageID(), test.getTestName(), result};
+            getSender().tell(output, ActorRef.noSender());
         })
         .build();
     }

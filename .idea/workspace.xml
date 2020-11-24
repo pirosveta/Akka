@@ -24,6 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cfdcb8c0-380a-4a0f-be64-e43639338e9b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/ExecuteActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/ExecuteActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/StoreActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/StoreActor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +89,7 @@
       <workItem from="1605523955878" duration="6964000" />
       <workItem from="1605865921748" duration="1192000" />
       <workItem from="1606137916285" duration="9686000" />
-      <workItem from="1606217324858" duration="5901000" />
+      <workItem from="1606217324858" duration="6274000" />
     </task>
     <servers />
   </component>
