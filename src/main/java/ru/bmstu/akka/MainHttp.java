@@ -22,7 +22,6 @@ import java.util.concurrent.CompletionStage;
 
 public class MainHttp extends AllDirectives {
 
-
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create("routes");
         final Http http = Http.get(system);
@@ -47,8 +46,8 @@ public class MainHttp extends AllDirectives {
         return route(
                 post(() ->
                     entity(Jackson.unmarshaller(PackageDefinition.class), pack ->
-                            entity(Jackson.unmarshaller(TestsDefinition.class, tests -> {
-                                kernel.tell(<pack, tests>, ActorRef.noSender());
+                            pack.getTests(Jackson.unmarshaller(TestsDefinition.class, tests -> {
+                                kernel.tell(Pair<pack, tests>, ActorRef.noSender());
                                 return complete("Tests started");
                             })))
                 ),
