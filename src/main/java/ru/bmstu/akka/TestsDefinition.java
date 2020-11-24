@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import java.util.List;
 
 public class TestsDefinition {
-    private final String packageID;
+    private final String testName;
     private final String jsScript;
     private final String functionName;
     private final List<JsonNode> tests;
