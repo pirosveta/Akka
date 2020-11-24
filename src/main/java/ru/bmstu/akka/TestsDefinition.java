@@ -8,8 +8,7 @@ import java.util.List;
 public class TestsDefinition {
     private final String testName;
     private final String expectedResult;
-    private final String functionName;
-    private final List<JsonNode> tests;
+    private final List<JsonNode> params;
 
     public PackageDefinition(@JsonProperty("packageID") String packageID,
                              @JsonProperty("jsScript") String jsScript,
