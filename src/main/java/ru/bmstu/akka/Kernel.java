@@ -6,6 +6,8 @@ import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
 import akka.routing.SmallestMailboxPool;
 
+import java.util.Map;
+
 public class Kernel extends AbstractActor {
 
     @Override
@@ -22,7 +24,7 @@ public class Kernel extends AbstractActor {
                 .match(String.class, packageID -> {
                     storeRouter.tell(packageID, getSelf());
                 })
-                .match(Boolean[].class, input -> {
+                .match(Map.class, input -> {
 
                 })
                 .build();

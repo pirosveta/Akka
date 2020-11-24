@@ -1,6 +1,7 @@
 package ru.bmstu.akka;
 
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
 import akka.japi.Pair;
 import akka.japi.pf.ReceiveBuilder;
 
@@ -32,7 +33,13 @@ public class StoreActor extends AbstractActor {
             total.replace(input[0], results);
         })
         .match(String.class, packageID -> {
-            
+            Map<String, Boolean> output = new HashMap<>();
+            Map<String, List<String>> results = total.get(packageID);
+            for (String testName : results.keySet()) {
+                List<String> values = results.get(testName);
+                output.put(testName, values.get(0) == values.get(1));
+            }
+            getSender().tell(output, ActorRef.noSender());
         })
         .build();
     }
