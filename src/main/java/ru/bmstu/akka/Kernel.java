@@ -7,7 +7,6 @@ import akka.japi.pf.ReceiveBuilder;
 import akka.routing.SmallestMailboxPool;
 
 import java.util.Map;
-import java.util.concurrent.Future;
 
 public class Kernel extends AbstractActor {
 
