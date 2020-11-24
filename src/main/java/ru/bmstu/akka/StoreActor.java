@@ -9,6 +9,8 @@ import java.util.Map;
 
 public class StoreActor extends AbstractActor {
 
+    private static Map<String, Map<String, List<String>>> results;
+
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create().matchAny(input -> {

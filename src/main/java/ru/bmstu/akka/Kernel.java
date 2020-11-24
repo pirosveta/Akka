@@ -6,11 +6,7 @@ import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
 import akka.routing.SmallestMailboxPool;
 
-import java.util.List;
-import java.util.Map;
-
 public class Kernel extends AbstractActor {
-    Map<String, Map<String, List<String>>> results;
 
     @Override
     public Receive createReceive() {
