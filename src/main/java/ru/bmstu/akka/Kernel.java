@@ -6,7 +6,12 @@ import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
 import akka.routing.SmallestMailboxPool;
 
+import java.util.List;
+import java.util.Map;
+
 public class Kernel extends AbstractActor {
+    Map<String, Map<String, List<String>>> results;
+
     @Override
     public Receive createReceive() {
         ActorRef storeRouter = getContext().actorOf(new SmallestMailboxPool(5)
@@ -15,10 +20,10 @@ public class Kernel extends AbstractActor {
                 .props(Props.create(ExecuteActor.class)), "execute");
         return ReceiveBuilder.create()
                 .match(PackageDefinition.class, pack -> {
-                    storeRouter.tell(pack, ActorRef.noSender());
+                    storeRouter.tell(pack, getSelf());
                 })
                 .match(String.class, packageID -> {
-                    executeRouter.tell(packageID, ActorRef.noSender());
+                    executeRouter.tell(packageID, getSelf());
                 })
                 .build();
     }

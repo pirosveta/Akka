@@ -4,10 +4,10 @@ import akka.actor.AbstractActor;
 import akka.japi.Pair;
 import akka.japi.pf.ReceiveBuilder;
 
+import java.util.List;
 import java.util.Map;
 
 public class StoreActor extends AbstractActor {
-    Map<String, Map<String, List<>>>
 
     @Override
     public Receive createReceive() {
