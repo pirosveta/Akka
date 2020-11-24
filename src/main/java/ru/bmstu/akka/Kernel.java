@@ -16,10 +16,10 @@ public class Kernel extends AbstractActor {
                 .props(Props.create(ExecuteActor.class)), "execute");
         return ReceiveBuilder.create()
                 .match(PackageDefinition.class, pack -> {
-                    storeRouter.tell(pack, getSelf());
+                    storeRouter.tell(pack, ActorRef.noSender());
                 })
                 .match(String.class, packageID -> {
-                    executeRouter.tell(packageID, getSelf());
+                    executeRouter.tell(packageID, ActorRef.noSender());
                 })
                 .build();
     }
