@@ -45,10 +45,11 @@ public class MainHttp extends AllDirectives {
         ActorRef kernel = system.actorOf(Props.create(Kernel.class));
         return route(
                 post(() ->
-                    entity(Jackson.unmarshaller(PackageDefinition.class), pack -> {
-                        kernel.tell(pack, ActorRef.noSender());
-                        return complete("Tests started!");
-                    })
+                    entity(Jackson.unmarshaller(PackageDefinition.class), pack ->
+                            entity(Jackson.unmarshaller(TestsDefinition.class, tests -> {
+                                kernel.tell(<pack, tests>, ActorRef.noSender());
+                                return complete("Tests started");
+                            })))
                 ),
                 get(() ->
                     parameter("packageID", (packageID) -> {
