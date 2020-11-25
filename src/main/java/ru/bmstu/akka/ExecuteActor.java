@@ -20,7 +20,7 @@ public class ExecuteActor extends AbstractActor {
             engine.eval(pack.getJsScript());
             Invocable invocable = (Invocable) engine;
             String result = invocable.invokeFunction(pack.getFunctionName(), test.getParams().toArray()).toString();
-            String[] output = {pack.getPackageID(), test.getTestName(), result};
+            String[] output = {pack.getPackageId(), test.getTestName(), result};
             getSender().tell(output, ActorRef.noSender());
         })
         .build();

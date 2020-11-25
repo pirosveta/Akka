@@ -19,11 +19,11 @@ public class StoreActor extends AbstractActor {
             Pair<PackageDefinition, TestsDefinition> pair = (Pair<PackageDefinition, TestsDefinition>) input;
             PackageDefinition pack = pair.first();
             TestsDefinition test = pair.second();
-            Map<String, List<String>> results = total.get(pack.getPackageID());
+            Map<String, List<String>> results = total.get(pack.getPackageId());
             List<String> values = results.get(test.getTestName());
             values.add(test.getExpectedResult());
             results.replace(test.getTestName(), values);
-            total.replace(pack.getPackageID(), results);
+            total.replace(pack.getPackageId(), results);
         })
         .match(String[].class, input -> {
             Map<String, List<String>> results = total.get(input[0]);
@@ -32,9 +32,9 @@ public class StoreActor extends AbstractActor {
             results.replace(input[1], values);
             total.replace(input[0], results);
         })
-        .match(String.class, packageID -> {
+        .match(String.class, packageId -> {
             Map<String, Boolean> output = new HashMap<>();
-            Map<String, List<String>> results = total.get(packageID);
+            Map<String, List<String>> results = total.get(packageId);
             for (String testName : results.keySet()) {
                 List<String> values = results.get(testName);
                 output.put(testName, values.get(0) == values.get(1));

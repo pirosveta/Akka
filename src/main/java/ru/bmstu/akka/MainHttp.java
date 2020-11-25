@@ -54,8 +54,8 @@ public class MainHttp extends AllDirectives {
                                     })))
                 ),
                 get(() ->
-                    parameter("packageID", (packageID) -> {
-                        Future<Object> result = Patterns.ask(kernel, packageID, 5000);
+                    parameter("packageId", (packageId) -> {
+                        Future<Object> result = Patterns.ask(kernel, packageId, 5000);
                         return completeOKWithFuture(result, Jackson.marshaller());
                     })
                 ));

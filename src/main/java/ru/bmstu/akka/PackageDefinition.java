@@ -6,23 +6,23 @@ import com.fasterxml.jackson.databind.JsonNode;
 import java.util.List;
 
 public class PackageDefinition {
-    private final String packageID;
+    private final String packageId;
     private final String jsScript;
     private final String functionName;
     private final List<JsonNode> tests;
 
-    public PackageDefinition(@JsonProperty("packageID") String packageID,
+    public PackageDefinition(@JsonProperty("packageId") String packageId,
                              @JsonProperty("jsScript") String jsScript,
                              @JsonProperty("functionName") String functionName,
                              @JsonProperty("tests") List<JsonNode> tests) {
-        this.packageID = packageID;
+        this.packageId = packageId;
         this.jsScript = jsScript;
         this.functionName = functionName;
         this.tests = tests;
     }
 
-    public String getPackageID() {
-        return packageID;
+    public String getPackageId() {
+        return packageId;
     }
 
     public String getJsScript() {

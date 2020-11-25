@@ -21,8 +21,8 @@ public class Kernel extends AbstractActor {
                     storeRouter.tell(pair, ActorRef.noSender());
                     executeRouter.tell(pair, ActorRef.noSender());
                 })
-                .match(String.class, packageID -> {
-                    storeRouter.tell(packageID, getSelf());
+                .match(String.class, packageId -> {
+                    storeRouter.tell(packageId, getSelf());
                 })
                 .match(Map.class, input -> {
                     getSender().tell(input, ActorRef.noSender());
