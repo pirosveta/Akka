@@ -8,6 +8,7 @@ import akka.japi.pf.ReceiveBuilder;
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 
 public class ExecuteActor extends AbstractActor {
     @Override
@@ -16,13 +17,11 @@ public class ExecuteActor extends AbstractActor {
             Pair<PackageDefinition, TestsDefinition> pair = (Pair<PackageDefinition, TestsDefinition>) input;
             PackageDefinition pack = pair.first();
             TestsDefinition test = pair.second();
-            ScriptEngine engine = new ScriptEngineManager().getEngineByName("executeTests");
+            ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
             engine.eval(pack.getJsScript());
             Invocable invocable = (Invocable) engine;
             String result = invocable.invokeFunction(pack.getFunctionName(), test.getParams().toArray()).toString();
             String[] output = {pack.getPackageId(), test.getTestName(), result};
-            System.out.println("EXECUTE:");
-            System.out.println(output);
             getSender().tell(output, ActorRef.noSender());
         })
         .build();

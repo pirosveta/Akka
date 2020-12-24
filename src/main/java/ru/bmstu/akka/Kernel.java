@@ -7,8 +7,6 @@ import akka.japi.Pair;
 import akka.japi.pf.ReceiveBuilder;
 import akka.routing.SmallestMailboxPool;
 
-import java.util.Map;
-
 public class Kernel extends AbstractActor {
 
     @Override
@@ -27,6 +25,9 @@ public class Kernel extends AbstractActor {
                 })
                 .match(String.class, packageId -> {
                     storeRouter.tell(packageId, getSelf());
+                })
+                .match(Map.class, input -> {
+                    getSender().tell(input, ActorRef.noSender());
                 })
                 .build();
     }

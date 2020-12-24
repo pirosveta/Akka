@@ -38,6 +38,8 @@ public class StoreActor extends AbstractActor {
             values.add(input[2]);
             results.replace(input[1], values);
             total.replace(input[0], results);
+            System.out.println("NEW STORE:");
+            System.out.println(total);
         })
         .match(String.class, packageId -> {
             HashMap<String, Boolean> output = new HashMap<>();
