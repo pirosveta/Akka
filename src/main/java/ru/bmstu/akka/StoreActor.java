@@ -29,8 +29,6 @@ public class StoreActor extends AbstractActor {
             values.add(test.getExpectedResult());
             results.replace(test.getTestName(), values);
             total.replace(pack.getPackageId(), results);
-            System.out.println("STORE:");
-            System.out.println(total);
         })
         .match(String[].class, input -> {
             HashMap<String, ArrayList<String>> results = total.get(input[0]);
@@ -38,8 +36,6 @@ public class StoreActor extends AbstractActor {
             values.add(input[2]);
             results.replace(input[1], values);
             total.replace(input[0], results);
-            System.out.println("NEW STORE:");
-            System.out.println(total);
         })
         .match(String.class, packageId -> {
             HashMap<String, Boolean> output = new HashMap<>();
