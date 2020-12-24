@@ -22,7 +22,7 @@ import java.util.concurrent.CompletionStage;
 
 public class MainHttp extends AllDirectives {
 
-    private final String NAME_SYSTEM = "routes";
+    private static final String NAME_SYSTEM = "routes";
 
     private ActorRef kernel;
 

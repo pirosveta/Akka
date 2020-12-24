@@ -23,6 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfdcb8c0-380a-4a0f-be64-e43639338e9b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/MainHttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/MainHttp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +108,7 @@
       <workItem from="1606217324858" duration="8248000" />
       <workItem from="1606293089131" duration="4151000" />
       <workItem from="1606305796391" duration="1014000" />
-      <workItem from="1608801348653" duration="8747000" />
+      <workItem from="1608801348653" duration="8760000" />
     </task>
     <servers />
   </component>
