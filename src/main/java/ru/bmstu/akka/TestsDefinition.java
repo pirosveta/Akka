@@ -13,7 +13,6 @@ public class TestsDefinition {
     public TestsDefinition(@JsonProperty("testName") String testName,
                              @JsonProperty("expectedResult") String expectedResult,
                              @JsonProperty("params") List<JsonNode> params) {
-        System.out.println("HERE");
         this.testName = testName;
         this.expectedResult = expectedResult;
         this.params = params;

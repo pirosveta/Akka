@@ -54,8 +54,8 @@ public class MainHttp extends AllDirectives {
                         for (TestsDefinition t : pack.getTests()) {
                             Pair<PackageDefinition, TestsDefinition> pair = new Pair<>(pack, t);
                             kernel.tell(pair, ActorRef.noSender());
-                            return complete("Tests started");
                         }
+                        return complete("Tests started");
                     })
                 ),
                 get(() ->
