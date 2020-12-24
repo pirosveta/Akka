@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class StoreActor extends AbstractActor {
+    private final int PACKAGE_ID_COLUMN = 0, TEST_NAME_COLUMN = 1, VALUE_COLUMN = 2;
 
     private static HashMap<String, HashMap<String, ArrayList<String>>> total = new HashMap<>();
 
@@ -31,9 +32,9 @@ public class StoreActor extends AbstractActor {
             total.replace(pack.getPackageId(), results);
         })
         .match(String[].class, input -> {
-            HashMap<String, ArrayList<String>> results = total.get(input[0]);
-            ArrayList<String> values = results.get(input[1]);
-            values.add(input[2]);
+            HashMap<String, ArrayList<String>> results = total.get(input[TEST_NAME_COLUMN]);
+            ArrayList<String> values = results.get(input[TEST_NAME_COLUMN]);
+            values.add(input[VALUE_COLUMN]);
             results.replace(input[1], values);
             total.replace(input[0], results);
         })
