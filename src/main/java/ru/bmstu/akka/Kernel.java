@@ -38,7 +38,6 @@ public class Kernel extends AbstractActor {
                             getSender().tell(result, ActorRef.noSender());
                         }
                     }, getContext().getDispatcher());
-                    getSender().tell(result, ActorRef.noSender());
                 })
                 .build();
     }

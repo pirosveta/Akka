@@ -47,9 +47,8 @@ public class StoreActor extends AbstractActor {
             for (String testName : results.keySet()) {
                 ArrayList<String> values = results.get(testName);
                 output.put(testName, values.get(0).compareTo(values.get(1)) == 0);
-                System.out.println(values.get(0));
-                System.out.println(values.get(1));
             }
+            System.out.println();
             getSender().tell(output, ActorRef.noSender());
         })
         .build();
