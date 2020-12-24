@@ -30,7 +30,7 @@ public class Kernel extends AbstractActor {
                 })
                 .match(String.class, packageId -> {
                     Future<Object> result = Patterns.ask(storeRouter, packageId, 5000);
-                    result.onComplete();
+                    result.onComplete(new onComple);
                     getSender().tell(result, ActorRef.noSender());
                 })
                 .build();
