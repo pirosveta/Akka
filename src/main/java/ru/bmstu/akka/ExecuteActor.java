@@ -11,7 +11,7 @@ import javax.script.ScriptEngineManager;
 
 public class ExecuteActor extends AbstractActor {
     @Override
-    public Receive createReceive() {
+    public Receive createReceive() throws NullPointerException {
         return ReceiveBuilder.create().matchAny(input -> {
             Pair<PackageDefinition, TestsDefinition> pair = (Pair<PackageDefinition, TestsDefinition>) input;
             PackageDefinition pack = pair.first();
