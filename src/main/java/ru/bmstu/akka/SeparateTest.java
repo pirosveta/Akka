@@ -20,4 +20,28 @@ public class SeparateTest {
         this.expectedResult = test.getExpectedResult();
         this.params = test.getParams();
     }
+
+    public String getPackageId() {
+        return packageId;
+    }
+
+    public String getJsScript() {
+        return jsScript;
+    }
+
+    public String getFunctionName() {
+        return functionName;
+    }
+
+    public String getTestName() {
+        return testName;
+    }
+
+    public String getExpectedResult() {
+        return expectedResult;
+    }
+
+    public List<JsonNode> getParams() {
+        return params;
+    }
 }
