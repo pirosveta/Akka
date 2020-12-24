@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class StoreActor extends AbstractActor {
-    private final int PACKAGE_ID_COLUMN = 0, TEST_NAME_COLUMN = 1, VALUE_COLUMN = 2;
+    private final int PACKAGE_ID_COLUMN = 0, TEST_NAME_COLUMN = 1, VALUE_COLUMN = 2,
+            ESTIMATED_VALUE = 0, CALCULATED_VALUE = 1, EQUAL_VALUES = 0;
 
     private static HashMap<String, HashMap<String, ArrayList<String>>> total = new HashMap<>();
 
@@ -32,18 +33,19 @@ public class StoreActor extends AbstractActor {
             total.replace(pack.getPackageId(), results);
         })
         .match(String[].class, input -> {
-            HashMap<String, ArrayList<String>> results = total.get(input[TEST_NAME_COLUMN]);
+            HashMap<String, ArrayList<String>> results = total.get(input[PACKAGE_ID_COLUMN]);
             ArrayList<String> values = results.get(input[TEST_NAME_COLUMN]);
             values.add(input[VALUE_COLUMN]);
-            results.replace(input[1], values);
-            total.replace(input[0], results);
+            results.replace(input[TEST_NAME_COLUMN], values);
+            total.replace(input[PACKAGE_ID_COLUMN], results);
         })
         .match(String.class, packageId -> {
             HashMap<String, Boolean> output = new HashMap<>();
             HashMap<String, ArrayList<String>> results = total.get(packageId);
             for (String testName : results.keySet()) {
                 ArrayList<String> values = results.get(testName);
-                output.put(testName, values.get(0).compareTo(values.get(1)) == 0);
+                output.put(testName,
+                        values.get(ESTIMATED_VALUE).compareTo(values.get(CALCULATED_VALUE)) == EQUAL_VALUES);
             }
             getSender().tell(output, ActorRef.noSender());
         })
