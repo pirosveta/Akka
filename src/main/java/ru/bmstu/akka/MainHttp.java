@@ -22,7 +22,8 @@ import java.util.concurrent.CompletionStage;
 
 public class MainHttp extends AllDirectives {
 
-    private static final String NAME_SYSTEM = "routes";
+    private static final String NAME_SYSTEM = "routes", DOMAIN = "localhost";
+    private static int PORT = 8080;
 
     private ActorRef kernel;
 
@@ -39,7 +40,7 @@ public class MainHttp extends AllDirectives {
                 instance.createRoute(system).flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
             routeFlow,
-            ConnectHttp.toHost("localhost", 8080),
+            ConnectHttp.toHost(DOMAIN, PORT),
             materializer
         );
         System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
