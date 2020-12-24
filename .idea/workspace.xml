@@ -22,7 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfdcb8c0-380a-4a0f-be64-e43639338e9b" name="Default Changelist" comment="" />
+    <list default="true" id="cfdcb8c0-380a-4a0f-be64-e43639338e9b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,17 +74,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainHttp" />
@@ -103,7 +94,9 @@
       <workItem from="1605865921748" duration="1192000" />
       <workItem from="1606137916285" duration="9686000" />
       <workItem from="1606217324858" duration="8248000" />
-      <workItem from="1606293089131" duration="2145000" />
+      <workItem from="1606293089131" duration="4151000" />
+      <workItem from="1606305796391" duration="1014000" />
+      <workItem from="1608801348653" duration="324000" />
     </task>
     <servers />
   </component>
@@ -135,22 +128,22 @@
       <screen x="0" y="0" width="1920" height="964" />
     </state>
     <state x="561" y="0" width="787" height="964" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.964@0.0.1920.964" timestamp="1606296624047" />
-    <state width="1864" height="233" key="GridCell.Tab.0.bottom" timestamp="1606297433859">
+    <state width="1864" height="233" key="GridCell.Tab.0.bottom" timestamp="1606327086562">
       <screen x="0" y="0" width="1920" height="964" />
     </state>
-    <state width="1864" height="233" key="GridCell.Tab.0.bottom/0.0.1920.964@0.0.1920.964" timestamp="1606297433859" />
-    <state width="1864" height="233" key="GridCell.Tab.0.center" timestamp="1606297433855">
+    <state width="1864" height="233" key="GridCell.Tab.0.bottom/0.0.1920.964@0.0.1920.964" timestamp="1606327086562" />
+    <state width="1864" height="233" key="GridCell.Tab.0.center" timestamp="1606327086561">
       <screen x="0" y="0" width="1920" height="964" />
     </state>
-    <state width="1864" height="233" key="GridCell.Tab.0.center/0.0.1920.964@0.0.1920.964" timestamp="1606297433855" />
-    <state width="1864" height="233" key="GridCell.Tab.0.left" timestamp="1606297433849">
+    <state width="1864" height="233" key="GridCell.Tab.0.center/0.0.1920.964@0.0.1920.964" timestamp="1606327086561" />
+    <state width="1864" height="233" key="GridCell.Tab.0.left" timestamp="1606327086561">
       <screen x="0" y="0" width="1920" height="964" />
     </state>
-    <state width="1864" height="233" key="GridCell.Tab.0.left/0.0.1920.964@0.0.1920.964" timestamp="1606297433849" />
-    <state width="1864" height="233" key="GridCell.Tab.0.right" timestamp="1606297433858">
+    <state width="1864" height="233" key="GridCell.Tab.0.left/0.0.1920.964@0.0.1920.964" timestamp="1606327086561" />
+    <state width="1864" height="233" key="GridCell.Tab.0.right" timestamp="1606327086561">
       <screen x="0" y="0" width="1920" height="964" />
     </state>
-    <state width="1864" height="233" key="GridCell.Tab.0.right/0.0.1920.964@0.0.1920.964" timestamp="1606297433858" />
+    <state width="1864" height="233" key="GridCell.Tab.0.right/0.0.1920.964@0.0.1920.964" timestamp="1606327086561" />
     <state x="377" y="57" width="1155" height="850" key="Maven.ArtifactSearchDialog" timestamp="1605525360163">
       <screen x="0" y="0" width="1920" height="964" />
     </state>
