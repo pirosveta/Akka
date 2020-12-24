@@ -43,7 +43,7 @@ public class MainHttp extends AllDirectives {
             ConnectHttp.toHost(DOMAIN, PORT),
             materializer
         );
-        System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
+        System.out.printf("Server online at http://%s:8080/\nPress RETURN to stop...");
         System.in.read();
         binding
             .thenCompose(ServerBinding::unbind)
