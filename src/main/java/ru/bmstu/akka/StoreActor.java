@@ -46,10 +46,10 @@ public class StoreActor extends AbstractActor {
             HashMap<String, ArrayList<String>> results = total.get(packageId);
             for (String testName : results.keySet()) {
                 ArrayList<String> values = results.get(testName);
-                output.put(testName, values.get(0).compareTo(values.get(1)_ == 0);
+                output.put(testName, values.get(0).compareTo(values.get(1)) == 0);
+                System.out.println(values.get(0));
+                System.out.println(values.get(1));
             }
-            System.out.println(output.get(0));
-            System.out.println(output.get(1));
             getSender().tell(output, ActorRef.noSender());
         })
         .build();
