@@ -35,7 +35,7 @@ public class Kernel extends AbstractActor {
                     result.onComplete(new OnComplete<Object>() {
                         @Override
                         public void onComplete(Throwable failure, Object success) throws Throwable {
-                            getSender().tell(result, ActorRef.noSender());
+                            getSender().tell(success, ActorRef.noSender());
                         }
                     }, getContext().getDispatcher());
                 })
