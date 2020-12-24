@@ -11,13 +11,14 @@ import akka.routing.SmallestMailboxPool;
 import scala.concurrent.Future;
 
 public class Kernel extends AbstractActor {
+    private final String STORE_ROUTER_NAME = "store", EXECUTE_ROUTER_NAME = "execute";
 
     @Override
     public Receive createReceive() {
         ActorRef storeRouter = getContext().actorOf(new SmallestMailboxPool(5)
-                .props(Props.create(StoreActor.class)), "store");
+                .props(Props.create(StoreActor.class)), STORE_ROUTER_NAME);
         ActorRef executeRouter = getContext().actorOf(new SmallestMailboxPool(5)
-                .props(Props.create(ExecuteActor.class)), "execute");
+                .props(Props.create(ExecuteActor.class)), EXECUTE_ROUTER_NAME);
         return ReceiveBuilder.create()
                 .match(Pair.class, pair -> {
                     storeRouter.tell(pair, ActorRef.noSender());
