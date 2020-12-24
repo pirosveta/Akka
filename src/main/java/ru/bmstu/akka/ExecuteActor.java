@@ -21,6 +21,8 @@ public class ExecuteActor extends AbstractActor {
             Invocable invocable = (Invocable) engine;
             String result = invocable.invokeFunction(pack.getFunctionName(), test.getParams().toArray()).toString();
             String[] output = {pack.getPackageId(), test.getTestName(), result};
+            System.out.println("EXECUTE:");
+            System.out.println(output);
             getSender().tell(output, ActorRef.noSender());
         })
         .build();

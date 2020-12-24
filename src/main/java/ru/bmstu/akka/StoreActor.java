@@ -15,6 +15,7 @@ public class StoreActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
+        System.out.println("HERE");
         return ReceiveBuilder.create().match(Pair.class, input -> {
             Pair<PackageDefinition, TestsDefinition> pair = (Pair<PackageDefinition, TestsDefinition>) input;
             PackageDefinition pack = pair.first();
@@ -24,6 +25,8 @@ public class StoreActor extends AbstractActor {
             values.add(test.getExpectedResult());
             results.replace(test.getTestName(), values);
             total.replace(pack.getPackageId(), results);
+            System.out.println("STORE:");
+            System.out.println(total);
         })
         .match(String[].class, input -> {
             Map<String, List<String>> results = total.get(input[0]);
