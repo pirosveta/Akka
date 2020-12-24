@@ -3,6 +3,7 @@ package ru.bmstu.akka;
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
+import akka.dispatch.OnComplete;
 import akka.japi.Pair;
 import akka.japi.pf.ReceiveBuilder;
 import akka.pattern.Patterns;
@@ -30,7 +31,8 @@ public class Kernel extends AbstractActor {
                 })
                 .match(String.class, packageId -> {
                     Future<Object> result = Patterns.ask(storeRouter, packageId, 5000);
-                    result.onComplete(new onComple);
+                    result.onComplete(new OnComplete<Object>() {
+                    });
                     getSender().tell(result, ActorRef.noSender());
                 })
                 .build();
