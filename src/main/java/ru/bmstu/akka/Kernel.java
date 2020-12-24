@@ -10,6 +10,7 @@ import akka.pattern.Patterns;
 import akka.routing.SmallestMailboxPool;
 import scala.concurrent.Future;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Kernel extends AbstractActor {
@@ -34,7 +35,7 @@ public class Kernel extends AbstractActor {
                     result.onComplete(new OnComplete<Object>() {
                         @Override
                         public void onComplete(Throwable failure, Object success) throws Throwable {
-                            getSender().tell(, ActorRef.noSender());
+                            getSender().tell(result, ActorRef.noSender());
                         }
                     }, getContext().getDispatcher());
                     getSender().tell(result, ActorRef.noSender());
