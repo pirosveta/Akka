@@ -11,13 +11,15 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 public class ExecuteActor extends AbstractActor {
+    private final String ENGINE_NAME = "nashorn";
+
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create().matchAny(input -> {
             Pair<PackageDefinition, TestsDefinition> pair = (Pair<PackageDefinition, TestsDefinition>) input;
             PackageDefinition pack = pair.first();
             TestsDefinition test = pair.second();
-            ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+            ScriptEngine engine = new ScriptEngineManager().getEngineByName(ENGINE_NAME);
             engine.eval(pack.getJsScript());
             Invocable invocable = (Invocable) engine;
             String result = invocable.invokeFunction(pack.getFunctionName(), test.getParams().toArray()).toString();
