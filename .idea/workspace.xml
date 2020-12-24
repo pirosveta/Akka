@@ -27,6 +27,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/ExecuteActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/ExecuteActor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/Kernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/Kernel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/MainHttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/MainHttp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/SeparateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/SeparateTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/StoreActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/StoreActor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +112,7 @@
       <workItem from="1606217324858" duration="8248000" />
       <workItem from="1606293089131" duration="4151000" />
       <workItem from="1606305796391" duration="1014000" />
-      <workItem from="1608801348653" duration="4009000" />
+      <workItem from="1608801348653" duration="4035000" />
     </task>
     <servers />
   </component>
