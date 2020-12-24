@@ -22,7 +22,7 @@ import java.util.concurrent.CompletionStage;
 
 public class MainHttp extends AllDirectives {
 
-    private static final String NAME_SYSTEM = "routes", DOMAIN = "localhost";
+    private static final String SYSTEM_NAME = "routes", DOMAIN = "localhost";
     private static int PORT = 8080, TIMEOUT = 5000;
 
     private ActorRef kernel;
@@ -32,7 +32,7 @@ public class MainHttp extends AllDirectives {
     }
 
     public static void main(String[] args) throws Exception {
-        ActorSystem system = ActorSystem.create(NAME_SYSTEM);
+        ActorSystem system = ActorSystem.create(SYSTEM_NAME);
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         MainHttp instance = new MainHttp(system);
