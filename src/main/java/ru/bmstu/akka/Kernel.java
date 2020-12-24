@@ -36,7 +36,7 @@ public class Kernel extends AbstractActor {
                         public void onComplete(Throwable failure, Object success) throws Throwable {
                             
                         }
-                    }, );
+                    }, getContext().getDispatcher());
                     getSender().tell(result, ActorRef.noSender());
                 })
                 .build();
