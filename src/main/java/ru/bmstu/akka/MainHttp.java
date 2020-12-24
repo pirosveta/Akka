@@ -22,7 +22,7 @@ import java.util.concurrent.CompletionStage;
 
 public class MainHttp extends AllDirectives {
 
-    private final String 
+    private final String NAME_SYSTEM = "routes";
 
     private ActorRef kernel;
 
@@ -31,7 +31,7 @@ public class MainHttp extends AllDirectives {
     }
 
     public static void main(String[] args) throws Exception {
-        ActorSystem system = ActorSystem.create("routes");
+        ActorSystem system = ActorSystem.create(NAME_SYSTEM);
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         MainHttp instance = new MainHttp(system);
