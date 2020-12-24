@@ -52,10 +52,10 @@ public class MainHttp extends AllDirectives {
                 post(() ->
                     entity(Jackson.unmarshaller(PackageDefinition.class), pack -> {
                         for (TestsDefinition t : pack.getTests()) {
-                            SeparateTest test = new SeparateTest(pack, t);
-                            kernel.tell(test, ActorRef.noSender());
+                            Pair<PackageDefinition, TestsDefinition> pair = new Pair<>(pack, t);
+                            kernel.tell(pair, ActorRef.noSender());
+                            return complete("Tests started");
                         }
-                        return complete("Tests started");
                     })
                 ),
                 get(() ->

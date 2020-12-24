@@ -25,6 +25,7 @@
     <list default="true" id="cfdcb8c0-380a-4a0f-be64-e43639338e9b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/Kernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/Kernel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/MainHttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/akka/MainHttp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +109,7 @@
       <workItem from="1606217324858" duration="8248000" />
       <workItem from="1606293089131" duration="4151000" />
       <workItem from="1606305796391" duration="1014000" />
-      <workItem from="1608801348653" duration="4062000" />
+      <workItem from="1608801348653" duration="4157000" />
     </task>
     <servers />
   </component>
@@ -164,9 +165,9 @@
       <screen x="0" y="0" width="1920" height="964" />
     </state>
     <state x="315" y="0" width="1280" height="964" key="SettingsEditor/0.0.1920.964@0.0.1920.964" timestamp="1605531045562" />
-    <state x="100" y="99" width="1720" height="764" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1608806297513">
+    <state x="100" y="99" width="1710" height="766" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1608807631984">
       <screen x="0" y="0" width="1920" height="964" />
     </state>
-    <state x="100" y="99" width="1720" height="764" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.964@0.0.1920.964" timestamp="1608806297513" />
+    <state x="100" y="99" width="1710" height="766" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.964@0.0.1920.964" timestamp="1608807631984" />
   </component>
 </project>
