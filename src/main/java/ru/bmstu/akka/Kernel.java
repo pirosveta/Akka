@@ -10,9 +10,6 @@ import akka.pattern.Patterns;
 import akka.routing.SmallestMailboxPool;
 import scala.concurrent.Future;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 public class Kernel extends AbstractActor {
 
     @Override
@@ -21,7 +18,6 @@ public class Kernel extends AbstractActor {
                 .props(Props.create(StoreActor.class)), "store");
         ActorRef executeRouter = getContext().actorOf(new SmallestMailboxPool(5)
                 .props(Props.create(ExecuteActor.class)), "execute");
-        ActorRef mainActor;
         return ReceiveBuilder.create()
                 .match(Pair.class, pair -> {
                     storeRouter.tell(pair, ActorRef.noSender());
@@ -32,10 +28,11 @@ public class Kernel extends AbstractActor {
                 })
                 .match(String.class, packageId -> {
                     Future<Object> result = Patterns.ask(storeRouter, packageId, 5000);
+                    ActorRef mainActor = getSender();
                     result.onComplete(new OnComplete<Object>() {
                         @Override
                         public void onComplete(Throwable failure, Object success) throws Throwable {
-                            getSender().tell(success, ActorRef.noSender());
+                            mainActor.tell(success, ActorRef.noSender());
                         }
                     }, getContext().getDispatcher());
                 })
