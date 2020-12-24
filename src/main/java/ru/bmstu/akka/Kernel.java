@@ -5,7 +5,9 @@ import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.japi.Pair;
 import akka.japi.pf.ReceiveBuilder;
+import akka.pattern.Patterns;
 import akka.routing.SmallestMailboxPool;
+import scala.concurrent.Future;
 
 import java.util.HashMap;
 
@@ -27,10 +29,8 @@ public class Kernel extends AbstractActor {
                     storeRouter.tell(input, ActorRef.noSender());
                 })
                 .match(String.class, packageId -> {
-                    storeRouter.tell(packageId, getSelf());
-                })
-                .match(HashMap.class, input -> {
-                    getSender().tell(input, ActorRef.noSender());
+                    Future<Object> result = Patterns.ask(storeRouter, packageId, 5000);
+                    getSender().tell(result, ActorRef.noSender());
                 })
                 .build();
     }
