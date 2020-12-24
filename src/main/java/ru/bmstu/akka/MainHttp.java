@@ -61,6 +61,7 @@ public class MainHttp extends AllDirectives {
                 get(() ->
                     parameter("packageId", (packageId) -> {
                         Future<Object> result = Patterns.ask(kernel, packageId, 5000);
+                        System.out.println("HERE");
                         return completeOKWithFuture(result, Jackson.marshaller());
                     })
                 ));
