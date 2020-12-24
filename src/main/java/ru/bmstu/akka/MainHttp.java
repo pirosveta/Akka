@@ -50,13 +50,13 @@ public class MainHttp extends AllDirectives {
     private Route createRoute(ActorSystem system) {
         return route(
                 post(() ->
-                    entity(Jackson.unmarshaller(PackageDefinition.class), pack ->
-                            path("tests", () ->
-                                    entity(Jackson.unmarshaller(TestsDefinition.class), tests -> {
-                                        Pair<PackageDefinition, TestsDefinition> pair = new Pair<>(pack, tests);
-                                        kernel.tell(pair, ActorRef.noSender());
-                                        return complete("Tests started");
-                                    })))
+                    entity(Jackson.unmarshaller(PackageDefinition.class), pack -> {
+                        for (TestsDefinition t : pack.getTests()) {
+                            Pair<PackageDefinition, TestsDefinition> pair = new Pair<>(pack, t);
+                            kernel.tell(pair, ActorRef.noSender());
+                            return complete("Tests started");
+                        }
+                    })
                 ),
                 get(() ->
                     parameter("packageId", (packageId) -> {
