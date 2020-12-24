@@ -32,6 +32,10 @@ public class Kernel extends AbstractActor {
                 .match(String.class, packageId -> {
                     Future<Object> result = Patterns.ask(storeRouter, packageId, 5000);
                     result.onComplete(new OnComplete<Object>() {
+                        @Override
+                        public void onComplete(Throwable failure, Object success) throws Throwable {
+                            
+                        }
                     });
                     getSender().tell(result, ActorRef.noSender());
                 })
