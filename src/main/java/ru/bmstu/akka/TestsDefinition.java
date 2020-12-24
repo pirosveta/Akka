@@ -6,6 +6,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import java.util.List;
 
 public class TestsDefinition {
+    private final String TEST_NAME_PATH = "", EXPECTED_RESULT_PATH = "", PARAMS_PATH = "";
+
     private final String testName;
     private final String expectedResult;
     private final List<JsonNode> params;
