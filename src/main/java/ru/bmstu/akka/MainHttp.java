@@ -23,7 +23,7 @@ import java.util.concurrent.CompletionStage;
 public class MainHttp extends AllDirectives {
 
     private static final String NAME_SYSTEM = "routes", DOMAIN = "localhost";
-    private static int PORT = 8080;
+    private static int PORT = 8080, TIMEOUT = 5000;
 
     private ActorRef kernel;
 
@@ -63,7 +63,7 @@ public class MainHttp extends AllDirectives {
                 ),
                 get(() ->
                     parameter("packageId", (packageId) -> {
-                        Future<Object> result = Patterns.ask(kernel, packageId, 5000);
+                        Future<Object> result = Patterns.ask(kernel, packageId, TIMEOUT);
                         return completeOKWithFuture(result, Jackson.marshaller());
                     })
                 ));
