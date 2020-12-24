@@ -17,7 +17,7 @@ public class Kernel extends AbstractActor {
                 .props(Props.create(StoreActor.class)), "store");
         ActorRef executeRouter = getContext().actorOf(new SmallestMailboxPool(5)
                 .props(Props.create(ExecuteActor.class)), "execute");
-        final ActorRef main;
+        ActorRef mainActor;
         return ReceiveBuilder.create()
                 .match(Pair.class, pair -> {
                     storeRouter.tell(pair, ActorRef.noSender());
@@ -28,7 +28,6 @@ public class Kernel extends AbstractActor {
                 })
                 .match(String.class, packageId -> {
                     storeRouter.tell(packageId, getSelf());
-                    main = getSender();
                 })
                 .match(HashMap.class, input -> {
                     getSender().tell(input, ActorRef.noSender());
