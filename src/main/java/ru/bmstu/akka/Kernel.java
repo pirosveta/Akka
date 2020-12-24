@@ -16,9 +16,9 @@ public class Kernel extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        ActorRef storeRouter = getContext().actorOf(new SmallestMailboxPool(5)
+        ActorRef storeRouter = getContext().actorOf(new SmallestMailboxPool(NUM_OF_POOLS)
                 .props(Props.create(StoreActor.class)), STORE_ROUTER_NAME);
-        ActorRef executeRouter = getContext().actorOf(new SmallestMailboxPool(5)
+        ActorRef executeRouter = getContext().actorOf(new SmallestMailboxPool(NUM_OF_POOLS)
                 .props(Props.create(ExecuteActor.class)), EXECUTE_ROUTER_NAME);
         return ReceiveBuilder.create()
                 .match(Pair.class, pair -> {
