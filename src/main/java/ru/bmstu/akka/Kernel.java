@@ -12,6 +12,7 @@ import scala.concurrent.Future;
 
 public class Kernel extends AbstractActor {
     private final String STORE_ROUTER_NAME = "store", EXECUTE_ROUTER_NAME = "execute";
+    private final int NUM_OF_POOLS = 5;
 
     @Override
     public Receive createReceive() {
